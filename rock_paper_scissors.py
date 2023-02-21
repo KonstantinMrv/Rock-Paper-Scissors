@@ -1,4 +1,5 @@
 import random
+from colorama import Fore, Back, Style
 
 rock = "Rock"
 paper = "Paper"
@@ -13,7 +14,7 @@ elif player_move == "p":
 elif player_move == "s":
     player_move = scissors
 else:
-    raise SystemExit("Invalid input. Choose [r]ock, [p]aper or [s]cissors and try again!")
+    raise SystemExit(Fore.RED + "Invalid input. Choose [r]ock, [p]aper or [s]cissors and try again!")
 
 computer_random_num = random.randint(1, 3)
 computer_move = ""
@@ -23,13 +24,15 @@ elif computer_random_num == 2:
     computer_move += "Paper"
 elif computer_random_num == 3:
     computer_move += "Scissors"
-print(f"The computer chose {computer_move}.")
+print(Fore.BLUE + f"The computer chose {computer_move}.")
+print(Style.RESET_ALL)
 
 if (player_move == rock and computer_move == scissors) or \
         (player_move == paper and computer_move == rock) or \
         (player_move == scissors and computer_move == paper):
-    print("You won this round!")
+    print(Fore.GREEN + "You won this round!")
 elif player_move == computer_move:
-    print("Draw! Let's try again and see who is superior!")
+    print(Fore.YELLOW + "Draw! Let's try again and see who is superior!")
 else:
-    print("You lose!")
+    print(Fore.RED + "You lose!")
+
