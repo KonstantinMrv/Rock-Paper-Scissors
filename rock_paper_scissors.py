@@ -47,17 +47,20 @@ while wanna_play:
             (player_move == scissors and computer_move == paper):
         player_score += 1
         print(Fore.GREEN + "You won this round!")
-        print(Fore.RESET + f"Your score: {player_score}")
-        print(Fore.RESET + f"CPU score: {cpu_score}")
+        print(Style.RESET_ALL)
+        print(Fore.LIGHTWHITE_EX + f"Your score: {player_score}")
+        print(Fore.LIGHTWHITE_EX + f"CPU score: {cpu_score}")
     elif player_move == computer_move:
         print(Fore.YELLOW + "Draw! Let's try again and see who is superior!")
-        print(Fore.RESET + f"Your score: {player_score}")
-        print(Fore.RESET + f"CPU score: {cpu_score}")
+        print(Style.RESET_ALL)
+        print(Fore.LIGHTWHITE_EX + f"Your score: {player_score}")
+        print(Fore.LIGHTWHITE_EX + f"CPU score: {cpu_score}")
     else:
         cpu_score += 1
         print(Fore.RED + "You lose!")
-        print(Fore.RESET + f"Your score: {player_score}")
-        print(Fore.RESET + f"CPU score: {cpu_score}")
+        print(Style.RESET_ALL)
+        print(Fore.LIGHTWHITE_EX + f"Your score: {player_score}")
+        print(Fore.LIGHTWHITE_EX + f"CPU score: {cpu_score}")
 
     another_one = input(Style.RESET_ALL + "Wanna play again? Type [y]es or [n]o: ")
     while True:
